@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+  user(id: ID!): [User]
+  users: [User]
+}
+
+type User {
+  userId: ID!
+  userName: String
+  notes: [Note]
+}
+
+type Note {
+  noteId: ID!
+  title: String
+  description: String
+  userId: Int
+  deletedFlag: String
+}

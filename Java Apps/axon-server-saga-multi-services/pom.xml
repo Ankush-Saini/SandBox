@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.axon.server.multi.services</groupId>
+    <artifactId>axon-server-saga-multi-services</artifactId>
+    <packaging>pom</packaging>
+    <version>2.5.1</version>
+
+    <modules>
+        <module>order-service</module>
+        <module>payment-service</module>
+        <module>core-apis</module>
+        <module>shipping-service</module>
+    </modules>
+
+</project>

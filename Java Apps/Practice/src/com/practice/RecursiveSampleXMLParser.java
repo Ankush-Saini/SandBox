@@ -21,7 +21,9 @@ public class RecursiveSampleXMLParser {
 
 				public void startElement(String uri, String localName, String qName, Attributes attributes) {
 					for (int i = 0; i < tagsList.length; i++) {
-						if (qName.equalsIgnoreCase(tagsList[i])) {
+						int colonIndex = qName.indexOf(":");
+						String qNameWoNamespace = colonIndex != -1 ? qName.substring(colonIndex + 1) : qName;
+						if (qNameWoNamespace.equalsIgnoreCase(tagsList[i])) {
 							if (i == 0)
 								tagFlag[0] = true;
 							else if (tagFlag[i - 1])
@@ -32,7 +34,9 @@ public class RecursiveSampleXMLParser {
 
 				public void endElement(String uri, String localName, String qName) {
 					for (int i = 0; i < tagsList.length; i++) {
-						if (qName.equalsIgnoreCase(tagsList[i])) {
+						int colonIndex = qName.indexOf(":");
+						String qNameWoNamespace = colonIndex != -1 ? qName.substring(colonIndex) : qName;
+						if (qNameWoNamespace.equalsIgnoreCase(tagsList[i])) {
 							if (i == 0)
 								tagFlag[0] = false;
 							else if (tagFlag[i - 1])

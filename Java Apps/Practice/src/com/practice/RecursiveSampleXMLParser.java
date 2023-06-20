@@ -143,7 +143,7 @@ public class RecursiveSampleXMLParser {
 
 				private String replaceStringPlaceholder(String originalValue) {
 					if (!isSplitIndex)
-						return originalValue;
+						return "$"+originalValue+"$";
 					else {
 						if (splitIndex >= 0)
 							return originalValue.substring(0, splitIndex) + "$" + originalValue.substring(splitIndex)

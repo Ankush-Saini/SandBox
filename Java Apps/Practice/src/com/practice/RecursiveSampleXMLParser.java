@@ -16,7 +16,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class RecursiveSampleXMLParser {
 	public static void main(String[] args) {
-		List<String> tags = Arrays.asList("results.inheritedAdSenseSettings.value.adSenseEnabled", "results.id{-4}");
+		List<String> tags = Arrays.asList("results.inheritedAdSenseSettings.value.adSenseEnabled", "results.id{-2}");
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		try {
@@ -142,15 +142,16 @@ public class RecursiveSampleXMLParser {
 				}
 
 				private String replaceStringPlaceholder(String originalValue) {
-					if (!isSplitIndex || originalValue.length() < Math.abs(splitIndex))
-						return "$" + originalValue + "$";
+					if (!isSplitIndex || originalValue.length() <= Math.abs(splitIndex))
+						return "$$[" + originalValue + "]$$";
 					else {
 						if (splitIndex >= 0)
-							return originalValue.substring(0, splitIndex) + "$" + originalValue.substring(splitIndex)
-									+ "$";
+							return originalValue.substring(0, splitIndex) + "$$[" + originalValue.substring(splitIndex)
+									+ "]$$";
 						else {
 							int finalInd = originalValue.length() + splitIndex;
-							return "$" + originalValue.substring(0, finalInd) + "$" + originalValue.substring(finalInd);
+							return "$$[" + originalValue.substring(0, finalInd) + "]$$"
+									+ originalValue.substring(finalInd);
 						}
 					}
 				}

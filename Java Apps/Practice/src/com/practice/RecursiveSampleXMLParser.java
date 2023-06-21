@@ -43,7 +43,7 @@ public class RecursiveSampleXMLParser {
 					+ "              <borderStyle>DEFAULT</borderStyle>\r\n"
 					+ "              <fontFamily>DEFAULT</fontFamily>\r\n"
 					+ "              <fontSize>DEFAULT</fontSize>\r\n" + "            </value>\r\n"
-					+ "          </inheritedAdSenseSettings>\r\n" + "        </results>\r\n" + "	<results>\r\n"
+					+ "          </inheritedAdSenseSettings>\r\n" + "        </results>\r\n" + "<customer><id>45443</id></customer>	<results>\r\n"
 					+ "          <id>2372</id>\r\n" + "          <name>RootAdUnit</name>\r\n"
 					+ "          <description></description>\r\n" + "          <targetWindow>TOP</targetWindow>\r\n"
 					+ "          <status>ACTIVE</status>\r\n" + "          <adUnitCode>1002372</adUnitCode>\r\n"
